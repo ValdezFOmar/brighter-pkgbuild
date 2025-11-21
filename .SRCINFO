@@ -1,0 +1,14 @@
+pkgbase = brighter-bin
+	pkgdesc = Control and fetch brightness information for backlight and led devices
+	pkgver = 0.3.0
+	pkgrel = 1
+	url = https://github.com/ValdezFOmar/brighter
+	arch = x86_64
+	license = MIT
+	depends = gcc-libs
+	depends = glibc
+	provides = brighter
+	source = https://github.com/ValdezFOmar/brighter/releases/download/v0.3.0/brighter-v0.3.0-x86_64-unknown-linux-gnu.tar.gz
+	sha256sums = 82b6abf5211aef349315498f7611546b73622749f4f71e58271328be10cf7e74
+
+pkgname = brighter-bin
