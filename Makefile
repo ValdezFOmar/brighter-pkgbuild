@@ -1,9 +1,16 @@
-all: .SRCINFO
+all: .SRCINFO lint
 
 .SRCINFO: PKGBUILD
-	rm -f *.tar.gz *.tar.zst
 	updpkgsums
-	makepkg --verifysource
+	makepkg --verifysource --force
 	makepkg --cleanbuild --force
-	namcap PKGBUILD *.tar.zst
 	makepkg --printsrcinfo > $@
+
+lint:
+	namcap PKGBUILD *.tar.zst
+	pkgctl license check
+
+clean:
+	rm -f *.tar.gz *.tar.zst
+
+.PHONY: clean lint
